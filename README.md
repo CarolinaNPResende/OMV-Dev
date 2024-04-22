@@ -1,5 +1,9 @@
+SOME EXAMPLES OF LIGHTNING WEB COMPONENTS  
 # OMV-Dev
 Oil &amp; Gas Customer Platform Developed in Salesforce 
+
+Here you will find some examples of Lightning Web Components (LWCs) developed by me for the project, using JavaScript, CSS, and HTML. 
+Due to contractual reasons, I cannot expose the entire project.
 
 Project Description: Modernization of the OMV's Customer Area
 
