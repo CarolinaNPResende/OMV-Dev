@@ -1,0 +1,49 @@
+<template>
+    <table>
+        <tr>  
+            <td class="columnsButtons">
+                <div class="Buttons">
+                    <button class="slds-button slds-button_brand" onclick={openModal}>{label.EditButton}</button>
+                    <button class="slds-button slds-button_brand" onclick={resetPassword}>{label.ResetPasswordButton}</button>
+                </div>
+            </td>
+        </tr>
+         <tr class="Columns" >
+            <td class="Column1" if:true={contactId}>
+                <lightning-record-form 
+                    record-id={contactId}
+                    object-api-name='Contact'
+                    fields={fields}
+                    columns=1
+                    mode="readonly">
+                </lightning-record-form>
+            </td>
+            <td class="Column2">
+                <div if:true={contactId}>
+                    <lightning-record-form 
+                        record-id={contactId}
+                        object-api-name='Contact'
+                        fields={readfields}
+                        columns=1
+                        mode=readonly>
+                    </lightning-record-form>
+                </div>
+                <div if:true={contactId}>
+                    <lightning-record-form 
+                        record-id={userId}
+                        object-api-name='User'
+                        fields={readuserfields}
+                        columns=1
+                        mode=readonly>
+                    </lightning-record-form>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <template if:true={resetPasswordComponent}>
+        <c-community-send-reset-pwd onclosemodal={closeModal} contactid={contactId} background='true'></c-community-send-reset-pwd>
+    </template>
+    <template if:true={isTabOpen}>
+        <c-community-my-contact-edit onclosemodal={closeModal} contactlayoutinfo={contactInfo} background='true'></c-community-my-contact-edit>
+    </template>
+</template>
