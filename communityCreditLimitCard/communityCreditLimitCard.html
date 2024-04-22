@@ -1,0 +1,47 @@
+<template>
+    <div class="TableTop" if:true={messageReceived}>
+        <table  frame=void rules=rows>
+            <tr class="card-background-tittle">
+                <td class="card-background-tittleTD1">{creditLimit.creditInformationCoutry}</td> <td colspan="0"><p>{creditLimitInformationHeaderText}</p></td><td>
+                    <button class="slds-button slds-button_icon slds-button_icon-border-filled" title="Refresh" label="Refresh" onclick={refreshComponent}>
+                        <svg class="slds-button__icon" aria-hidden="true">
+                            <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg?cache=9.28.0#refresh"></use>
+                        </svg>
+                    </button>
+                </td>
+              
+            </tr>
+            <tr  class="card-separator">
+                <td colspan="4">
+                </td>
+            </tr>
+            <tr class="card-background">
+                <td class="card-backgroundTD1"><img src={iconCreditLimit} ></td><td>{creditLimitText}</td><td class="card-backgroundTD2">{creditLimit.creditLimit}</td>
+            </tr>
+            <tr class="card-background">
+                <td><img src={iconRemainingCreditLimit}></td><td>{remainingCreditLimitText}</td><td class="card-backgroundTD2">{creditLimit.remainingCreditLimit}</td>
+            </tr>
+            <tr class="card-background">
+                <td ><img src={iconOpenItems}></td><td>{openItemsText}</td><td class="card-backgroundTD2">{creditLimit.openItems}</td>
+            </tr>
+            <tr class="card-background">
+                <td><img src={iconValidUntil}></td><td>{validUntilText}</td><td class="card-backgroundTD2">{creditLimit.validUntil}</td>
+            </tr>
+            <tr class="card-background">
+                <td><img src={iconLastUpdateDate}></td><td>{lastUpdateDateText}</td><td class="card-backgroundTD2">{creditLimit.lastUpdateDate}</td>
+            </tr>
+
+            <tr class="card-separator" >
+                <td colspan="3">
+                </td>
+            </tr>
+        </table>
+        <lightning-spinner if:true={isLoading} alternative-text="Loading" variant="brand" size="large">
+        </lightning-spinner>
+    </div>
+    <div class="ClassDot">
+        <template for:each={creditLimitValues} for:item="creditLimitItem">
+            <td key={creditLimitItem.creditLimitId}><button key={creditLimitItem.creditLimitId} id={creditLimitItem.creditLimitId} data-id={creditLimitItem.creditLimitId} class="dot" onclick={creditLimitChanged}></button></td>
+        </template>
+    </div>
+</template>

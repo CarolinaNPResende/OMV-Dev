@@ -1,0 +1,39 @@
+@import "c/communityFontLibrary";
+
+.shadowed:hover{
+	box-shadow: 0px 4px 4px 0px #00000040;
+	cursor: pointer;
+}
+
+
+@media screen and (min-device-width: 700px) and (max-device-width: 767px){
+
+	.TotalButton[c-communityDashButtonHomepage_communityDashButtonHomepage] {
+		width: 329%;
+		margin-left: -115.5%;
+	}
+}
+
+@media screen and (min-device-width: 630px) and (max-device-width: 699px){
+
+	.TotalButton[c-communityDashButtonHomepage_communityDashButtonHomepage] {
+		width: 329%;
+		margin-left: -115%;
+	}
+}
+
+@media screen and (min-device-width: 500px) and (max-device-width: 630px){
+
+	.TotalButton[c-communityDashButtonHomepage_communityDashButtonHomepage] {
+		width: 329%;
+		margin-left: -114.5%;
+	}
+}
+
+@media screen and (max-width: 500px)  {
+
+	.TotalButton[c-communityDashButtonHomepage_communityDashButtonHomepage] {
+		width: 329%;
+		margin-left: -114%;
+	}
+}

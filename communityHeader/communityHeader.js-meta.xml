@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+      </targets>
+      <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="isListViewTittle" type="Boolean" default="false" />
+          <property name="isDashBoardTittle" type="Boolean" default="false" />
+          <property name="textStyle" type="String" default="width:100%;position: relative;overflow-y: hidden;overflow-x: hidden;background-color:#365880!important;display: table; table-layout: fixed;text-align: center;font-size: 20px; font-family:OMV Source Sans Pro; color:white" description="" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

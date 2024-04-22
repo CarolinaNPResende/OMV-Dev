@@ -1,0 +1,28 @@
+<template>
+    <div class="TotalButton">
+        <div if:true ={isNewOrder} style={divStyle}>
+            <button style={buttonFinalStyle} class="shadowed" onclick={openModal}>{buttonText}</button>
+            <template if:true={isModalOpen}>
+                <c-portal-order-creation onmodalstatus={handleModalStatus} ></c-portal-order-creation>
+            </template>
+        </div>
+
+        <div if:false ={isNewOrder} style={divStyle}>
+            <div if:true={isUserManagment}>
+                <div if:true={usermanagementError}> 
+                    <a style={buttonFinalStyle3} class="shadowed" onclick={errorShow}>{buttonText}</a>
+                </div>
+                <div if:false={usermanagementError}> 
+                    <a class="shadowed" href={buttonURL} style={buttonFinalStyle3}>
+                        {buttonText}
+                    </a>
+                </div>
+            </div>
+            <div if:false={isUserManagment}>
+                <a class="shadowed" href={buttonURL} style={buttonFinalStyle3}>
+                    {buttonText}
+                </a>
+            </div>
+        </div>
+    </div>
+</template>

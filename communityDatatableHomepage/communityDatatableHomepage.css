@@ -1,0 +1,9 @@
+.image
+{
+  height: 30px;
+  width: 30px;
+}
+
+.slds-p-around_medium, .slds-p-around--medium {
+  padding-right: 2rem;
+}
